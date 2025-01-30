@@ -67,7 +67,68 @@
             // it would be best practice to limit the number of nested if statements
             // as much as possible
 
+            /**** Switch statements ****/
+            // Switch statements will execute specific pieces of code based on the value of a
+            // variable or expression.
+            // This would be preferable to a large chain of if/else if/else statements.
 
+            Console.Write($"Please enter a letter: ");
+            string letterChosen = Console.ReadLine();
+
+            //Convert the letterChosen to lower case and then parse it as a char
+            char letter = char.Parse(letterChosen.ToLower());
+
+            // to start a switch statement, use the "switch" keyword.
+            // Then in parentheses put the variable or expression you wish to examine
+            
+            switch (letter)
+            {
+                // For each use case, use the keyword "case" followed by the value that you are expecting and a colon :
+                // NOTE: Only constants can be used in a "case" statement.
+                // The below example is the same as: if (letter == 'a')
+                case 'a':
+                    //This code will execute if letter == 'a'
+                    Console.WriteLine($"You entered the letter 'a'.");
+                    // At the end of each case statement, we must put the "break" keyword
+                    break;
+                case 'b':
+                    Console.WriteLine($"You entered the letter 'b'.");
+                    break;
+                // if none of the cases match, then the "default" case will execute
+                // This is equivalent to the "else" statement.
+                default:
+                    Console.WriteLine($"You entered the character '{letter}'.");
+                    break;
+            }
+
+            // It would be more common to use switch statements when we are assessing a variable
+            // that could have multiple values.
+            // if statements would be more useful for more complicated logic to perform operations.
+
+
+            //Get two numbers from the user for the logical operator demo
+            Console.Write($"Enter number 1: ");
+            int num1 = int.Parse(Console.ReadLine());
+
+            Console.Write($"Enter number 2: ");
+            int num2 = int.Parse(Console.ReadLine());
+
+            // Logical Operators
+            // != = NOT Equal to
+            // && = AND
+            // || = OR
+
+            // != operator
+            // Very often we need to check if something isn't true, rather than if something is true.
+            // Depending on the use case, the logic could be better to check for false instead of true.
+            // To check if a value does not equal another value, we use the != operator
+
+
+
+
+
+
+            // Ternary Operator
         }
     }
 }
