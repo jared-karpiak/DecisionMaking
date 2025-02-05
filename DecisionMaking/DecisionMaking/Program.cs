@@ -67,6 +67,144 @@
             // it would be best practice to limit the number of nested if statements
             // as much as possible
 
+            // Logical Operators
+            // ! = NOT 
+            // && = AND
+            // || = OR
+
+            // != operator
+            // Very often we need to check if something isn't true, rather than if something is true.
+            // Depending on the use case, the logic could be better to check for false instead of true.
+            // To check if a value does not equal another value, we use the != operator
+
+            if (firstNumber != secondNumber)
+            {
+                Console.WriteLine($"{firstNumber} doesn't equal {secondNumber}.");
+            }
+
+            
+
+            Console.Write("Is programming awesome? ");
+            string userResponse = Console.ReadLine();
+            bool programmingIsAwesome;
+
+            if (userResponse.Equals("yes"))
+                programmingIsAwesome = true;
+            else
+                programmingIsAwesome = false;
+
+            // if we have a boolean variable, we can just add a ! to the front of it to check for its opposite
+            // The below logic is the same as "programmingIsAwesome == false"
+            //  |
+            //  |
+            //  V
+            if (!programmingIsAwesome)
+                Console.WriteLine("LIES!!!!");
+
+
+            // && AND
+            // The AND logical operator will combine multiple logical expressions so we can check that multiple conditions are true
+            // before performing the operation.
+            // This logic will check that our first number is between 5 and 10
+
+            if (firstNumber > 5 && firstNumber < 10)
+                Console.WriteLine($"{firstNumber} is between 5 and 10.");
+
+
+
+            // || OR
+            // The OR logical operator will allow us to check one or more conditions are true. As long as one of the conditions is true, the
+            // code inside of the if statement will execute.
+
+            if (secondNumber < 10 || secondNumber > 20)
+                Console.WriteLine($"{secondNumber} is less than 10 or greater than 10.");
+
+
+            // Logical expressions and operators can be combined to form more complex statements, so we can really narrow down the conditions
+            // required to execute a logical expression.
+
+            // The below statement is checking that
+            // Programming Is Awesome AND firstNumber is great than the second Number
+            // OR
+            // Programming is not awesome AND firstNumber is less than the second number
+
+            if (programmingIsAwesome && firstNumber > secondNumber || firstNumber < secondNumber && !programmingIsAwesome)
+            {
+                Console.WriteLine("Ummmmm, I have no idea what to write for this statement.");
+            }
+
+            // Logical Precedence
+            // 1. (logical expressions in brackets)
+            // 2. && expressions
+            // 3. || expressions
+
+            // Just like arithmetic operators, there is an order of operations for logical operators.
+            // The acronym you can use is BAO (Brackets, AND, OR)
+            // First we perform operations that are present in brackets ()
+            // then we perform any AND (&&) operations
+            // Lastly we check any OR (||) operations
+
+            // If the operators are the same, for example three && checks in a row, they are evaluated from left to right
+
+            // Here are some examples to illustrate this.
+
+            // Example 1:
+            // We will use the following values
+            //      programmingIsAwesome = true;
+            //      firstNumber = 5
+            //      secondNumber = 10
+
+            // Because && comes before || in precendence, the && statement is going to be checked first
+            // programmingIsAwesome && firstNumber > secondNumber
+            //          true        &&           false      
+            // so the first statement is "false"
+
+            // Now we check the second && statement
+            // !programmingIsAwesome && firstNumber < secondNumber
+            //          false       &&           true
+            // so the second statement is also "false"
+
+            // Lastly we check the || statement
+            //          false       ||          false
+            // So we evaluate to false and the if statement will not execute
+
+            if (programmingIsAwesome && firstNumber > secondNumber || !programmingIsAwesome && firstNumber < secondNumber)
+            {
+                Console.WriteLine("Example 1 of logical precedence.");
+            }
+
+            // Example 2:
+            // We will use the following values
+            //      programmingIsAwesome = true;
+            //      firstNumber = 5
+            //      secondNumber = 10
+
+            // This logic is slightly different, notice brackets were added to the middle and the second check is firstNumber is less than secondNumber
+
+            // Following the BAO order
+            // First we will analyze whats in the brackets.
+            // firstNumber < secondNumber || !programmingIsAwesome
+            //          true              ||        false
+            // so the first statement is "true"
+
+            // Next we check programmingIsAwesome, which is also "true"
+
+            // Lastly we check firstNumber < secondNumber, which again is "true"
+
+            // At the end we are left with:
+            // true && true && true
+            // So the code inside this if statement will execute
+
+            if (programmingIsAwesome && (firstNumber < secondNumber || !programmingIsAwesome) && firstNumber < secondNumber)
+            {
+                Console.WriteLine("Example 2 of logical precedence.");
+            }
+
+
+            // Ternary Operator
+
+
+
             /**** Switch statements ****/
             // Switch statements will execute specific pieces of code based on the value of a
             // variable or expression.
@@ -84,7 +222,7 @@
             switch (letter)
             {
                 // For each use case, use the keyword "case" followed by the value that you are expecting and a colon :
-                // NOTE: Only constants can be used in a "case" statement.
+                // NOTE: Only constants can be used in a "case" statement.  
                 // The below example is the same as: if (letter == 'a')
                 case 'a':
                     //This code will execute if letter == 'a'
@@ -105,30 +243,9 @@
             // that could have multiple values.
             // if statements would be more useful for more complicated logic to perform operations.
 
+            // Providing a list of items for a user to select, a menu where you press "A" to do one thing, press "B" to do another thing, etc.
+            // would be a good use of a switch statement.
 
-            //Get two numbers from the user for the logical operator demo
-            Console.Write($"Enter number 1: ");
-            int num1 = int.Parse(Console.ReadLine());
-
-            Console.Write($"Enter number 2: ");
-            int num2 = int.Parse(Console.ReadLine());
-
-            // Logical Operators
-            // != = NOT Equal to
-            // && = AND
-            // || = OR
-
-            // != operator
-            // Very often we need to check if something isn't true, rather than if something is true.
-            // Depending on the use case, the logic could be better to check for false instead of true.
-            // To check if a value does not equal another value, we use the != operator
-
-
-
-
-
-
-            // Ternary Operator
         }
     }
 }
