@@ -82,13 +82,11 @@
                 Console.WriteLine($"{firstNumber} doesn't equal {secondNumber}.");
             }
 
-            
-
-            Console.Write("Is programming awesome? ");
+            Console.Write("Is programming awesome (type 'yes' obviously')?  ");
             string userResponse = Console.ReadLine();
             bool programmingIsAwesome;
 
-            if (userResponse.Equals("yes"))
+            if (userResponse.Contains("yes"))
                 programmingIsAwesome = true;
             else
                 programmingIsAwesome = false;
@@ -203,7 +201,30 @@
 
             // Ternary Operator
 
+            // The ternary operator is a special way of writing a simple if / else statement in a single line of code.
+            // It has many uses, but a common use is to assign a value to a variable based on a current condition
+            // It takes the following format:
+            // <logicalExpression> ? <valueIfTrue> : <valueIfFalse>
+           
+            // Here is an example where we set the value of the variable highestNumber to whichever number is higher:
 
+            int highestNumber = firstNumber > secondNumber ? firstNumber : secondNumber;
+
+            Console.WriteLine($"The highest number is: {highestNumber}.");
+
+            // Using the ternary operator is the same as doing this:
+
+            int lowestNumber;
+            if (firstNumber < secondNumber)
+            {
+                lowestNumber = firstNumber;
+            }
+            else
+            {
+                lowestNumber = secondNumber;
+            }
+
+            Console.WriteLine($"The lowest number is: {lowestNumber}");
 
             /**** Switch statements ****/
             // Switch statements will execute specific pieces of code based on the value of a
